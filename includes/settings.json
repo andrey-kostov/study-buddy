@@ -1,0 +1,18 @@
+{
+  "projectName": { 
+      "value": "Study Buddy",
+      "name":"Project Name" 
+    },
+  "numberQstsFree": { 
+      "value": 10,
+      "name":"Number of free questions" 
+    },
+  "numberQstsClosed": { 
+      "value": 25,
+      "name":"Number of closed questions" 
+    },
+  "failPercent": { 
+      "value": 50,
+      "name":"Fail percent" 
+    }
+}
