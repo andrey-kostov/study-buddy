@@ -1,18 +1,1 @@
-{
-  "projectName": { 
-      "value": "Study Buddy",
-      "name":"Project Name" 
-    },
-  "numberQstsFree": { 
-      "value": 10,
-      "name":"Number of free questions" 
-    },
-  "numberQstsClosed": { 
-      "value": 25,
-      "name":"Number of closed questions" 
-    },
-  "failPercent": { 
-      "value": 50,
-      "name":"Fail percent" 
-    }
-}
+{"projectName":{"name":"Project Name","value":"Study Buddy34"},"numberQstsFree":{"name":"Number of free questions","value":"1034455633er"},"numberQstsClosed":{"name":"Number of closed questions","value":"25"},"failPercent":{"name":"Fail percent","value":"503"}}
