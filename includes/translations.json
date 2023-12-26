@@ -1,9 +1,17 @@
 {
     "generate":"Generate test",
+    "generate_closed":"Generate test with closed questions",
+    "generate_open":"Generate test with open questions",
     "subject":"Add subject",
     "topic":"Add topic",
-    "question":"Add question",
+    "add_question":"Add question",
     "settings":"Settings",
     "save_settings":"Save settings",
+    "save_subject":"Save subject",
+    "save_topic":"Save topic",
+    "save_question":"Save question",
+    "question":"Question",
+    "correct":"Corect answer",
+    "option":"Answer",
     "about":"About"
   }

@@ -15,7 +15,7 @@ $(document).ready(function(){
         });
 
         settingsJson = JSON.stringify(settingsObject);
-        console.log(typeof settingsObject);
+
         $.ajax({
             type: "POST",
             url: "ajax.php",
@@ -33,4 +33,10 @@ $(document).ready(function(){
         });
 
     })
-});
+
+    //Add subject
+    
+
+
+    //Add topic
+}); 

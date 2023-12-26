@@ -30,68 +30,98 @@
             <a class="nav-link mx-3" href="#generate"><?php echo $translations->generate;?></a>
             <a class="nav-link mx-3" href="#subject"><?php echo $translations->subject;?></a>
             <a class="nav-link mx-3" href="#topic"><?php echo $translations->topic;?></a>
-            <a class="nav-link mx-3" href="#question"><?php echo $translations->question;?></a>
+            <a class="nav-link mx-3" href="#question"><?php echo $translations->add_question;?></a>
             <a class="nav-link mx-3" href="#settings"><?php echo $translations->settings;?></a>
             <a class="nav-link mx-3" href="#about"><?php echo $translations->about;?></a>
         </div>
     </nav>
     <!-- Navigation End -->
 
-    <div class="container-fluid p-3">
+    <div id="wrapper" class="container-fluid p-3">
         <div id="content-wrapper" >
             <h1><?php echo $settings->projectName->value;?></h1>
 
             <!-- Generate test Start -->
-                <div class="container-fluid d-flex justify-content-center mt-4 p-3" id="generate">
-                    <h2 class="text-center">
-                        <?php echo $translations->generate;?>
-                    </h2>
-                    
+                <div class="container-fluid d-flex flex-column justify-content-center mt-4 p-3" id="generate">
+                    <div class="row mt-4">
+                        <h2 class="text-center">
+                            <?php echo $translations->generate;?>
+                        </h2>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-primary" id="generate-closed"><?php echo $translations->generate_closed;?></button>
+                        <button class="btn btn-primary" id="generate-open"><?php echo $translations->generate_open;?></button>
+                    </div>    
                 </div>
-            <!-- Generate test End -->
-
-
-            <!-- Add subject Start -->
-                <div class="container-fluid d-flex justify-content-center mt-4 p-3" id="subject">
-                    <h2 class="text-center">
-                        <?php echo $translations->subject;?>
-                    </h2>
-                    
+                <!-- Generate test End -->
+                
+                
+                <!-- Add subject Start -->
+                <div class="container-fluid d-flex flex-column justify-content-center mt-4 p-3" id="subject">
+                    <div class="row  mt-4">
+                        <h2 class="text-center">
+                            <?php echo $translations->subject;?>
+                        </h2>
+                    </div>
+                    <div class="row mt-4">
+                        <input type="text" class="form-control w-100" placeholder="<?php echo $translations->subject;?>">
+                        <button class="btn btn-primary">
+                            <?php echo $translations->save_subject;?>
+                        </button>
+                    </div>
                 </div>
             <!-- Add subject End -->
 
 
             <!-- Add topic Start -->
-                <div class="container-fluid d-flex justify-content-center mt-4 p-3" div id="topic">
-                    <h2 class="text-center">
-                        <?php echo $translations->topic;?>
-                    </h2>
-                    
+                <div class="container-fluid d-flex flex-column justify-content-center mt-4 p-3" div id="topic">
+                    <div class="row  mt-4">
+                        <h2 class="text-center">
+                            <?php echo $translations->topic;?>
+                        </h2>
+                    </div>
+                    <div class="row mt-4">
+                        <input type="text" class="form-control w-100" placeholder="<?php echo $translations->topic;?>">
+                        <button class="btn btn-primary">
+                            <?php echo $translations->save_topic;?>
+                        </button>
+                    </div>
                 </div>
             <!-- Add topic End -->
 
 
             <!-- Add question Start -->
-                <div class="container-fluid d-flex justify-content-center mt-4 p-3" id="question">
-                    <h2 class="text-center">
-                        <?php echo $translations->question;?>
-                    </h2>
-                    
+                <div class="container-fluid d-flex flex-column justify-content-center mt-4 p-3" id="question">
+                    <div class="row mt-4">
+                        <h2 class="text-center">
+                            <?php echo $translations->add_question;?>
+                        </h2>
+                    </div>
+                    <div class="row mt-4">
+                        <input type="text" class="form-control mb-3 w-100" placeholder="<?php echo $translations->correct;?>">
+                        <input type="text" class="form-control mb-3 w-100" placeholder="<?php echo $translations->question;?>">
+                        <input type="text" class="form-control mb-3 w-100" placeholder="<?php echo $translations->option;?>">
+                        <input type="text" class="form-control mb-3 w-100" placeholder="<?php echo $translations->option;?>">
+                        <input type="text" class="form-control mb-3 w-100" placeholder="<?php echo $translations->option;?>">
+                        <button class="btn btn-primary">
+                            <?php echo $translations->save_question;?>
+                        </button>
+                    </div>
                 </div>
             <!-- Add question End -->
 
 
             <!-- Settings Start -->
                 <div class="container-fluid d-flex flex-column justify-content-center mt-4 p-3" id="settings">
-                    <div class="row mt-4 p-3">
+                    <div class="row mt-4">
                         <h2 class="text-center">
                             <?php echo $translations->settings;?>
                         </h2>
                     </div>
-                    <div class="row mt-4 p-3 ">
-                        <div class="container-fluid flex-column d-flex align-items-center justify-content-center p-3">
+                    <div class="row mt-4">
+                        <div class="container-fluid flex-column d-flex align-items-center justify-content-center">
                             <?php foreach($settings as $key=>$value){?>
-                                <div class="input-group mb-3 w-50 flex-column d-flex align-items-left">
+                                <div class="w-100 mb-3 flex-column d-flex align-items-left">
                                     <label class="form-label w-100" id="<?php echo $key;?>"><?php echo $value->name;?></label>
                                     <input type="text" 
                                             class="settings-input form-control w-100" 
