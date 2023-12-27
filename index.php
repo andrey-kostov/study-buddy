@@ -4,7 +4,10 @@
 
     $translationsJson = file_get_contents('includes/translations.json');
     $translations = json_decode($translationsJson);
-    // var_dump($translations);
+
+    //Get all subject if any exist
+    $subjects = glob("questions/*");
+    // var_dump(count($subjects));
 ?>
 
 <!DOCTYPE html>
@@ -48,6 +51,32 @@
                             <?php echo $translations->generate;?>
                         </h2>
                     </div>
+                    <div class="row mt-4">
+                        <h3 class="text-center">
+                            <?php echo $translations->pick_subjects;?>
+                        </h3>
+                    </div>
+                    <div class="row">
+                    <?php if(count($subjects) > 0){
+                        $indexSubject = 0;
+                        foreach($subjects as $subject){
+                            $indexTopic = 0;
+                            $subjectArray = explode('/',$subject); ?>
+                            <div class="row mt-4">
+                                <h4><?php echo $subjectArray[1];?></h4>
+                                <?php $topics = glob($subject.'/*.json');
+                                foreach($topics as $topic){ $topicArray = explode('/',$topic); ?>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="checkbox-<?php echo $indexSubject,$indexTopic;?>">
+                                        <label class="form-check-label" for="checkbox-<?php echo $indexSubject,$indexTopic;?>">
+                                            <?php echo $topicArray[2];?>
+                                        </label>
+                                    </div>
+                                <?php $indexTopic++;} ?>
+                            </div>
+                            
+                    <?php }} $indexSubject++; ?>
+                    </div>
                     <div class="row">
                         <button class="btn btn-primary" id="generate-closed"><?php echo $translations->generate_closed;?></button>
                         <button class="btn btn-primary" id="generate-open"><?php echo $translations->generate_open;?></button>
@@ -64,6 +93,7 @@
                         </h2>
                     </div>
                     <div class="row mt-4">
+                        
                         <input type="text" class="form-control w-100" placeholder="<?php echo $translations->subject;?>">
                         <button class="btn btn-primary">
                             <?php echo $translations->save_subject;?>
@@ -81,6 +111,14 @@
                         </h2>
                     </div>
                     <div class="row mt-4">
+                        <select class="form-select mb-3" name="subject-select" id="subject-select">
+                            <option value=""><?php echo $translations->select_subject;?></option>
+                            <?php if(count($subjects) > 0){
+                                foreach($subjects as $subject){
+                                    $subjectArray = explode('/',$subject); ?>
+                                    <option value="<?php echo $subjectArray[1];?>"><?php echo $subjectArray[1];?></option>
+                            <?php }} ?>
+                        </select>
                         <input type="text" class="form-control w-100" placeholder="<?php echo $translations->topic;?>">
                         <button class="btn btn-primary">
                             <?php echo $translations->save_topic;?>
@@ -98,11 +136,22 @@
                         </h2>
                     </div>
                     <div class="row mt-4">
-                        <input type="text" class="form-control mb-3 w-100" placeholder="<?php echo $translations->correct;?>">
-                        <input type="text" class="form-control mb-3 w-100" placeholder="<?php echo $translations->question;?>">
-                        <input type="text" class="form-control mb-3 w-100" placeholder="<?php echo $translations->option;?>">
-                        <input type="text" class="form-control mb-3 w-100" placeholder="<?php echo $translations->option;?>">
-                        <input type="text" class="form-control mb-3 w-100" placeholder="<?php echo $translations->option;?>">
+                        <select class="form-select mb-3" name="question-subject-select" id="question-subject-select">
+                            <option value=""><?php echo $translations->select_subject;?></option>
+                            <?php if(count($subjects) > 0){
+                                foreach($subjects as $subject){
+                                    $subjectArray = explode('/',$subject); ?>
+                                    <option value="<?php echo $subjectArray[1];?>"><?php echo $subjectArray[1];?></option>
+                            <?php }} ?>
+                        </select>
+                        <select class="form-select mb-3" name="question-topic-select" id="question-topic-select">
+                        <option value=""><?php echo $translations->select_topic;?></option>
+                        </select>
+                        <input type="text" class="form-control mb-3 w-100" data-name="question" placeholder="<?php echo $translations->question;?>">
+                        <input type="text" class="form-control mb-3 w-100" data-name="correct" placeholder="<?php echo $translations->correct;?>">
+                        <input type="text" class="form-control mb-3 w-100" data-name="option1" placeholder="<?php echo $translations->option;?>">
+                        <input type="text" class="form-control mb-3 w-100" data-name="option2" placeholder="<?php echo $translations->option;?>">
+                        <input type="text" class="form-control mb-3 w-100" data-name="option3" placeholder="<?php echo $translations->option;?>">
                         <button class="btn btn-primary">
                             <?php echo $translations->save_question;?>
                         </button>

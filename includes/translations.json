@@ -12,6 +12,9 @@
     "save_question":"Save question",
     "question":"Question",
     "correct":"Corect answer",
+    "pick_subjects":"Pick subjects",
+    "select_subject":"Select subject",
+    "select_topic":"Select topic",
     "option":"Answer",
     "about":"About"
   }
