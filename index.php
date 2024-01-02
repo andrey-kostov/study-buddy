@@ -152,7 +152,7 @@
                         <input type="text" class="form-control mb-3 w-100" data-name="option1" placeholder="<?php echo $translations->option;?>">
                         <input type="text" class="form-control mb-3 w-100" data-name="option2" placeholder="<?php echo $translations->option;?>">
                         <input type="text" class="form-control mb-3 w-100" data-name="option3" placeholder="<?php echo $translations->option;?>">
-                        <button class="btn btn-primary">
+                        <button id="save-question-btn" class="btn btn-primary">
                             <?php echo $translations->save_question;?>
                         </button>
                     </div>

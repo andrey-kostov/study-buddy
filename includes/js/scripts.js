@@ -108,4 +108,43 @@ $(document).ready(function(){
             }
         });
     });
+
+    //Save question
+    $(document).on('click','#save-question-btn',function(){
+        var option1 = $('#question input[data-name="option1"]').val();
+        var option2 = $('#question input[data-name=option2]').val();
+        var option3 = $('#question input[data-name=option3]').val();
+        var correct_option = $('#question input[data-name=correct]').val();
+        var question = $('#question input[data-name="question"]').val();
+        var subject = $('#question-subject-select option:selected').text();
+        var topic = $('#question-topic-select option:selected').text();
+
+        $.ajax({
+            type: "POST",
+            url: "ajax.php",
+            dataType: "html",
+            data: {
+                action: "save_question",
+                option1:option1,
+                option2:option2,
+                option3:option3,
+                correct_option:correct_option,
+                question:question,
+                subject:subject,
+                topic:topic
+            },
+            success: function(response) {
+                alert(response);
+
+                $('#question input[data-name="option1"]').val('');
+                $('#question input[data-name=option2]').val('');
+                $('#question input[data-name=option3]').val('');
+                $('#question input[data-name=correct]').val('');
+                $('#question input[data-name="question"]').val('');
+            },
+            error: function(xhr, status, error) {
+                console.error("AJAX Request Error:", status, error);
+            }
+        });
+    });
 }); 
