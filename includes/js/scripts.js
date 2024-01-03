@@ -38,7 +38,7 @@ $(document).ready(function(){
     
     $(document).on('click','#subject button',function(){
         var subject = $('#subject input').val();
-        console.log(subject);
+        
         $.ajax({
             type: "POST",
             url: "ajax.php",
@@ -63,7 +63,7 @@ $(document).ready(function(){
     $(document).on('click','#topic button',function(){
         var topic = $('#topic input').val();
         var subject = $('#subject-select option:selected').text();
-        console.log(subject,topic);
+
         $.ajax({
             type: "POST",
             url: "ajax.php",
@@ -147,4 +147,35 @@ $(document).ready(function(){
             }
         });
     });
+
+    //Generate test with closed questions
+    $(document).on('click','#generate-closed',function(){   
+        var topicsArray = [];
+        $('#generate input:checked').each(function(){
+            var thisTopic = $(this).siblings('label').text();
+            var thisSubject = $(this).parents('.form-check').siblings('h4').text();
+            var topicName = thisSubject+'/'+thisTopic;
+            topicsArray.push(topicName);
+        });
+        console.log(topicsArray);
+
+        $.ajax({
+            type:"POST",
+            url:"ajax.php",
+            dataType:"html",
+            data:{
+                action:"generate_test",
+                type:"closed",
+                topicsArray:topicsArray
+            },
+            success:function(){
+                window.location = 'generate_test.php';
+            },
+            error: function(xhr, status, error) {
+                console.error("AJAX Request Error:", status, error);
+            }
+        });
+    });
+
+    
 }); 

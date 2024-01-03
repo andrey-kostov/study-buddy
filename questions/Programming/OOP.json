@@ -1,0 +1,184 @@
+[
+    {
+        "question": "What is encapsulation in object-oriented programming?",
+        "option1": "Bundling data and methods that operate on the data",
+        "option2": "The process of converting code into machine language",
+        "option3": "A way to define variables",
+        "correct_option": "Bundling data and methods that operate on the data"
+    },
+    {
+        "question": "What is inheritance in OOP?",
+        "option1": "Copying and pasting code from one class to another",
+        "option2": "A mechanism for creating a new class using properties of an existing class",
+        "option3": "Defining multiple variables in a class",
+        "correct_option": "A mechanism for creating a new class using properties of an existing class"
+    },
+    {
+        "question": "What is polymorphism?",
+        "option1": "A programming language feature allowing objects of different types to be treated as objects of a common type",
+        "option2": "A way to declare multiple variables in a single line",
+        "option3": "A technique to hide the implementation details of a class",
+        "correct_option": "A programming language feature allowing objects of different types to be treated as objects of a common type"
+    },
+    {
+        "question": "What is a class in OOP?",
+        "option1": "A blueprint for creating objects",
+        "option2": "A single variable",
+        "option3": "A function that returns a value",
+        "correct_option": "A blueprint for creating objects"
+    },
+    {
+        "question": "What is an object in OOP?",
+        "option1": "A method in a class",
+        "option2": "An instance of a class",
+        "option3": "A loop structure",
+        "correct_option": "An instance of a class"
+    },
+    {
+        "question": "What is the purpose of an interface in OOP?",
+        "option1": "To define a set of methods that must be implemented by a class",
+        "option2": "To create objects",
+        "option3": "To write comments in code",
+        "correct_option": "To define a set of methods that must be implemented by a class"
+    },
+    {
+        "question": "What is composition in OOP?",
+        "option1": "A way of creating objects",
+        "option2": "A design principle to model a has-a relationship",
+        "option3": "A loop construct",
+        "correct_option": "A design principle to model a has-a relationship"
+    },
+    {
+        "question": "Explain the term 'constructor' in OOP.",
+        "option1": "A method used for destructing objects",
+        "option2": "A method used for creating and initializing objects",
+        "option3": "A variable used to count the number of objects",
+        "correct_option": "A method used for creating and initializing objects"
+    },
+    {
+        "question": "What is method overloading?",
+        "option1": "Having multiple methods with the same name but different parameters",
+        "option2": "A way to overload a program with too many methods",
+        "option3": "A technique to hide the internal details of a method",
+        "correct_option": "Having multiple methods with the same name but different parameters"
+    },
+    {
+        "question": "What is method overriding?",
+        "option1": "Having multiple methods with the same name and parameters",
+        "option2": "A way to override the default behavior of a programming language",
+        "option3": "Providing a different implementation for a method in a subclass",
+        "correct_option": "Providing a different implementation for a method in a subclass"
+    },
+    {
+        "question": "What is the difference between abstract class and interface?",
+        "option1": "An abstract class can have both abstract and non-abstract methods, while an interface can only have abstract methods",
+        "option2": "An abstract class cannot have any methods, while an interface can have both abstract and non-abstract methods",
+        "option3": "There is no difference, and the terms can be used interchangeably",
+        "correct_option": "An abstract class can have both abstract and non-abstract methods, while an interface can only have abstract methods"
+    },
+    {
+        "question": "What is the purpose of the 'super' keyword in OOP?",
+        "option1": "To refer to the superclass",
+        "option2": "To create a new object",
+        "option3": "To access the current object",
+        "correct_option": "To refer to the superclass"
+    },
+    {
+        "question": "What is a static method in a class?",
+        "option1": "A method that can be called on an instance of the class",
+        "option2": "A method that can be called on the class itself, without creating an instance",
+        "option3": "A method that cannot be called at all",
+        "correct_option": "A method that can be called on the class itself, without creating an instance"
+    },
+    {
+        "question": "Explain the concept of 'aggregation' in OOP.",
+        "option1": "A way of creating objects",
+        "option2": "A design principle to model a has-a relationship",
+        "option3": "A loop construct",
+        "correct_option": "A design principle to model a has-a relationship"
+    },
+    {
+        "question": "What is the purpose of the 'this' keyword in OOP?",
+        "option1": "To refer to the current class",
+        "option2": "To create a new object",
+        "option3": "To refer to the current object",
+        "correct_option": "To refer to the current object"
+    },
+    {
+        "question": "What is a package in OOP?",
+        "option1": "A way to pack and unpack data",
+        "option2": "A collection of classes and interfaces",
+        "option3": "A method to compress files",
+        "correct_option": "A collection of classes and interfaces"
+    },
+    {
+        "question": "What is the purpose of the 'final' keyword in OOP?",
+        "option1": "To indicate that a class cannot be extended",
+        "option2": "To indicate that a method cannot be overridden",
+        "option3": "To indicate that an object cannot be modified",
+        "correct_option": "To indicate that a class cannot be extended"
+    },
+    {
+        "question": "Explain the concept of 'abstraction' in OOP.",
+        "option1": "A way of creating objects",
+        "option2": "A design principle to model a has-a relationship",
+        "option3": "Hiding the implementation details and showing only the necessary features of an object",
+        "correct_option": "Hiding the implementation details and showing only the necessary features of an object"
+    },
+    {
+        "question": "What is the purpose of the 'interface' keyword in OOP?",
+        "option1": "To define a set of methods that must be implemented by a class",
+        "option2": "To create objects",
+        "option3": "To write comments in code",
+        "correct_option": "To define a set of methods that must be implemented by a class"
+    },
+    {
+        "question": "What is a constructor chaining in OOP?",
+        "option1": "Calling a constructor from another constructor within the same class",
+        "option2": "Creating multiple constructors in a class",
+        "option3": "Connecting different classes using constructors",
+        "correct_option": "Calling a constructor from another constructor within the same class"
+    },
+    {
+        "question": "What is the purpose of the 'abstract' keyword in OOP?",
+        "option1": "To indicate that a class cannot be extended",
+        "option2": "To indicate that a method cannot be overridden",
+        "option3": "To indicate that a class may have abstract methods and cannot be instantiated",
+        "correct_option": "To indicate that a class may have abstract methods and cannot be instantiated"
+    },
+    {
+        "question": "What is the SOLID principles in OOP?",
+        "option1": "A set of five design principles for creating maintainable and scalable software",
+        "option2": "A set of keywords in OOP",
+        "option3": "A way to declare variables in a class",
+        "correct_option": "A set of five design principles for creating maintainable and scalable software"
+    },
+    {
+        "question": "What is the purpose of the 'protected' access modifier in OOP?",
+        "option1": "To restrict access to the class members within the same package",
+        "option2": "To allow access only within the same class",
+        "option3": "To allow access within the same class and its subclasses",
+        "correct_option": "To allow access within the same class and its subclasses"
+    },
+    {
+        "question": "What is the purpose of the 'sealed' keyword in OOP?",
+        "option1": "To indicate that a class cannot be extended",
+        "option2": "To indicate that a method cannot be overridden",
+        "option3": "To indicate that a class cannot be instantiated",
+        "correct_option": "To indicate that a class cannot be instantiated"
+    },
+    {
+        "question": "Explain the term 'composition over inheritance' in OOP.",
+        "option1": "Favoring the use of composition to create relationships between classes rather than using inheritance",
+        "option2": "Favoring the use of inheritance over composition",
+        "option3": "A way to create objects",
+        "correct_option": "Favoring the use of composition to create relationships between classes rather than using inheritance"
+    },
+    {
+        "question": "What is the purpose of the 'volatile' keyword in OOP?",
+        "option1": "To indicate that a variable's value may be changed by multiple threads simultaneously",
+        "option2": "To declare a variable without assigning a value",
+        "option3": "To indicate that a variable cannot be changed",
+        "correct_option": "To indicate that a variable's value may be changed by multiple threads simultaneously"
+    }
+]

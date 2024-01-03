@@ -68,8 +68,7 @@
                                 foreach($topics as $topic){ $topicArray = explode('/',$topic); ?>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="checkbox-<?php echo $indexSubject,$indexTopic;?>">
-                                        <label class="form-check-label" for="checkbox-<?php echo $indexSubject,$indexTopic;?>">
-                                            <?php echo $topicArray[2];?>
+                                        <label class="form-check-label" for="checkbox-<?php echo $indexSubject,$indexTopic;?>"><?php echo $topicArray[2];?>
                                         </label>
                                     </div>
                                 <?php $indexTopic++;} ?>

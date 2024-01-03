@@ -74,5 +74,12 @@ switch($action){
         
         echo 'Question saved!';
     break;
+
+    case'generate_test':
+        session_start();
+        $_SESSION["type"] = $_POST['type'];
+        $_SESSION["topicsArray"] = $_POST['topicsArray'];
+
+    break;  
 }
 ?>
