@@ -177,5 +177,19 @@ $(document).ready(function(){
         });
     });
 
+    //Check if answer is correct
+    $(document).on('click','button.option',function(){
+        if($(this).hasClass('correct')){
+            $(this).removeClass('btn-outline-dark');
+            $(this).addClass('btn-success');
+            $currentAnswers = $('#answers').text();
+            
+            $('#answers').text(++$currentAnswers);
+        }else{
+            $(this).removeClass('btn-outline-dark');
+            $(this).addClass('btn-danger');
+        }
+        $(this).siblings('button').addClass('disabled');
+    });
     
 }); 

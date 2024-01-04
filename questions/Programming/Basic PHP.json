@@ -21,13 +21,6 @@
         "correct_option": "Both Procedural and Object-Oriented"
     },
     {
-        "question": "How do you start a PHP block of code?",
-        "option1": "<?php",
-        "option2": "<script>",
-        "option3": "<php>",
-        "correct_option": "<?php"
-    },
-    {
         "question": "Which of the following is the correct way to comment in PHP?",
         "option1": "// This is a comment",
         "option2": "# This is a comment",

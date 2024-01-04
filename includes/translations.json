@@ -16,5 +16,6 @@
     "select_subject":"Select subject",
     "select_topic":"Select topic",
     "option":"Answer",
-    "about":"About"
+    "about":"About",
+    "result":"Your result is: "
   }
