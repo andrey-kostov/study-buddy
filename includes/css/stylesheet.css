@@ -23,7 +23,7 @@
     justify-content: center;
     flex-direction: row;
     gap: 5px;
-    font-size: 2rem;
+    font-size: 1.3rem;
 }
 
 #test-body{
@@ -58,6 +58,25 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    font-size: 14px;
+}
+
+.question-wrapper .open-questions button{
+    width: auto;
+    padding: 8px 26px;
+    min-height: auto;
+    text-transform: uppercase;
+}
+
+.question-wrapper .open-question-answer{
+    display: none;
+    float: left;
+    width: 100%;
+    padding: 15px 0;
+}
+
+.question-wrapper hr{
+    margin-top: 15px;
 }
 
 .question-text{

@@ -1,21 +1,33 @@
 {
+    "add_question":"Add question",
+    "about":"About",
+    
+    "correct":"Corect answer",
+    
     "generate":"Generate test",
     "generate_closed":"Generate test with closed questions",
     "generate_open":"Generate test with open questions",
-    "subject":"Add subject",
-    "topic":"Add topic",
-    "add_question":"Add question",
+    
+    "need_to_pass":"Correct answers to pass - ",
+    
+    "option":"Answer",
+    
+    "pick_subjects":"Pick subjects",
+    
+    "result":"Your result is: ",
+    
     "settings":"Settings",
+    "subject":"Add subject",
     "save_settings":"Save settings",
     "save_subject":"Save subject",
     "save_topic":"Save topic",
     "save_question":"Save question",
-    "question":"Question",
-    "correct":"Corect answer",
-    "pick_subjects":"Pick subjects",
     "select_subject":"Select subject",
     "select_topic":"Select topic",
-    "option":"Answer",
-    "about":"About",
-    "result":"Your result is: "
+    "show_answer":"Show answer",
+    
+    "topic":"Add topic",
+
+    "question":"Question"
+    
   }

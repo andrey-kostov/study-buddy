@@ -61,8 +61,8 @@
                     <?php }} $indexSubject++; ?>
                     </div>
                     <div class="row">
-                        <button class="btn btn-primary" id="generate-closed"><?php echo $translations->generate_closed;?></button>
-                        <button class="btn btn-primary" id="generate-open"><?php echo $translations->generate_open;?></button>
+                        <button class="btn btn-primary generate-test generate-closed"><?php echo $translations->generate_closed;?></button>
+                        <button class="btn btn-primary generate-test generate-open"><?php echo $translations->generate_open;?></button>
                     </div>    
                 </div>
                 <!-- Generate test End -->

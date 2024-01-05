@@ -149,7 +149,7 @@ $(document).ready(function(){
     });
 
     //Generate test with closed questions
-    $(document).on('click','#generate-closed',function(){   
+    $(document).on('click','.generate-test',function(){   
         var topicsArray = [];
         $('#generate input:checked').each(function(){
             var thisTopic = $(this).siblings('label').text();
@@ -157,7 +157,12 @@ $(document).ready(function(){
             var topicName = thisSubject+'/'+thisTopic;
             topicsArray.push(topicName);
         });
-        console.log(topicsArray);
+
+        if($(this).hasClass('generate-closed')){
+            var type = 'closed';    
+        }else{
+            var type = 'open';
+        }
 
         $.ajax({
             type:"POST",
@@ -165,7 +170,7 @@ $(document).ready(function(){
             dataType:"html",
             data:{
                 action:"generate_test",
-                type:"closed",
+                type:type,
                 topicsArray:topicsArray
             },
             success:function(){
@@ -190,6 +195,13 @@ $(document).ready(function(){
             $(this).addClass('btn-danger');
         }
         $(this).siblings('button').addClass('disabled');
+        $(this).parents('.answers-wrapper').removeClass('not-answered');
+        
+    });
+
+    //Show answer to open question
+    $(document).on('click','.answers-wrapper.open-questions button',function(){
+        $(this).siblings('.open-question-answer').slideToggle();
     });
     
 }); 
