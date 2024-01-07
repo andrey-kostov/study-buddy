@@ -19,7 +19,6 @@
             <a class="nav-link mx-3" href="#topic"><?php echo $translations->topic;?></a>
             <a class="nav-link mx-3" href="#question"><?php echo $translations->add_question;?></a>
             <a class="nav-link mx-3" href="#settings"><?php echo $translations->settings;?></a>
-            <a class="nav-link mx-3" href="#about"><?php echo $translations->about;?></a>
         </div>
     </nav>
     <!-- Navigation End -->
@@ -48,22 +47,25 @@
                             $subjectArray = explode('/',$subject); ?>
                             <div class="row mt-4">
                                 <h4><?php echo $subjectArray[1];?></h4>
-                                <?php $topics = glob($subject.'/*.json');
-                                foreach($topics as $topic){ $topicArray = explode('/',$topic); ?>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="checkbox-<?php echo $indexSubject,$indexTopic;?>">
-                                        <label class="form-check-label" for="checkbox-<?php echo $indexSubject,$indexTopic;?>"><?php echo $topicArray[2];?>
-                                        </label>
-                                    </div>
-                                <?php $indexTopic++;} ?>
+                                <div class="subject-wrapper">
+                                    <?php $topics = glob($subject.'/*.json');
+                                    foreach($topics as $topic){ $topicArray = explode('/',$topic); ?>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="checkbox-<?php echo $indexSubject,$indexTopic;?>">
+                                            <label class="form-check-label" for="checkbox-<?php echo $indexSubject,$indexTopic;?>"><?php echo $topicArray[2];?>
+                                            </label>
+                                        </div>
+                                    <?php $indexTopic++;} ?>
+                                </div>
                             </div>
                             
                     <?php }} $indexSubject++; ?>
                     </div>
-                    <div class="row">
-                        <button class="btn btn-primary generate-test generate-closed"><?php echo $translations->generate_closed;?></button>
-                        <button class="btn btn-primary generate-test generate-open"><?php echo $translations->generate_open;?></button>
+                    <div class="row buttons-wrapper">
+                        <button class="btn btn-outline-primary generate-test generate-closed"><?php echo $translations->generate_closed;?></button>
+                        <button class="btn btn-outline-primary generate-test generate-open"><?php echo $translations->generate_open;?></button>
                     </div>    
+                    <div id="generate-test-alert"><?php echo $translations->please_pick_topics;?></div>
                 </div>
                 <!-- Generate test End -->
                 
@@ -75,10 +77,10 @@
                             <?php echo $translations->subject;?>
                         </h2>
                     </div>
-                    <div class="row mt-4">
+                    <div class="row mt-4 input-wrapper">
                         
-                        <input type="text" class="form-control w-100" placeholder="<?php echo $translations->subject;?>">
-                        <button class="btn btn-primary">
+                        <input type="text" class="form-control" placeholder="<?php echo $translations->subject;?>">
+                        <button class="btn btn-outline-primary">
                             <?php echo $translations->save_subject;?>
                         </button>
                     </div>
@@ -93,8 +95,8 @@
                             <?php echo $translations->topic;?>
                         </h2>
                     </div>
-                    <div class="row mt-4">
-                        <select class="form-select mb-3" name="subject-select" id="subject-select">
+                    <div class="row mt-4 input-wrapper">
+                        <select class="form-select" name="subject-select" id="subject-select">
                             <option value=""><?php echo $translations->select_subject;?></option>
                             <?php if(count($subjects) > 0){
                                 foreach($subjects as $subject){
@@ -102,8 +104,8 @@
                                     <option value="<?php echo $subjectArray[1];?>"><?php echo $subjectArray[1];?></option>
                             <?php }} ?>
                         </select>
-                        <input type="text" class="form-control w-100" placeholder="<?php echo $translations->topic;?>">
-                        <button class="btn btn-primary">
+                        <input type="text" class="form-control" placeholder="<?php echo $translations->topic;?>">
+                        <button class="btn btn-outline-primary">
                             <?php echo $translations->save_topic;?>
                         </button>
                     </div>
@@ -118,8 +120,8 @@
                             <?php echo $translations->add_question;?>
                         </h2>
                     </div>
-                    <div class="row mt-4">
-                        <select class="form-select mb-3" name="question-subject-select" id="question-subject-select">
+                    <div class="row mt-4 input-wrapper">
+                        <select class="form-select" name="question-subject-select" id="question-subject-select">
                             <option value=""><?php echo $translations->select_subject;?></option>
                             <?php if(count($subjects) > 0){
                                 foreach($subjects as $subject){
@@ -127,15 +129,15 @@
                                     <option value="<?php echo $subjectArray[1];?>"><?php echo $subjectArray[1];?></option>
                             <?php }} ?>
                         </select>
-                        <select class="form-select mb-3" name="question-topic-select" id="question-topic-select">
+                        <select class="form-select" name="question-topic-select" id="question-topic-select">
                         <option value=""><?php echo $translations->select_topic;?></option>
                         </select>
-                        <input type="text" class="form-control mb-3 w-100" data-name="question" placeholder="<?php echo $translations->question;?>">
-                        <input type="text" class="form-control mb-3 w-100" data-name="correct" placeholder="<?php echo $translations->correct;?>">
-                        <input type="text" class="form-control mb-3 w-100" data-name="option1" placeholder="<?php echo $translations->option;?>">
-                        <input type="text" class="form-control mb-3 w-100" data-name="option2" placeholder="<?php echo $translations->option;?>">
-                        <input type="text" class="form-control mb-3 w-100" data-name="option3" placeholder="<?php echo $translations->option;?>">
-                        <button id="save-question-btn" class="btn btn-primary">
+                        <input type="text" class="form-control w-100" data-name="question" placeholder="<?php echo $translations->question;?>">
+                        <input type="text" class="form-control w-100" data-name="correct" placeholder="<?php echo $translations->correct;?>">
+                        <input type="text" class="form-control w-100" data-name="option1" placeholder="<?php echo $translations->option;?>">
+                        <input type="text" class="form-control w-100" data-name="option2" placeholder="<?php echo $translations->option;?>">
+                        <input type="text" class="form-control w-100" data-name="option3" placeholder="<?php echo $translations->option;?>">
+                        <button id="save-question-btn" class="btn btn-outline-primary">
                             <?php echo $translations->save_question;?>
                         </button>
                     </div>
@@ -166,21 +168,13 @@
                                 </div>
                             <?php } ?>            
                         </div>
-                        <button class="btn btn-primary " id="save-settings">
+                        <button class="btn btn-outline-primary " id="save-settings">
                             <?php echo $translations->save_settings;?>
                         </button>
                     </div>
                 </div>
             <!-- Settings End -->
 
-
-            <!-- About Start -->
-                <div class="container-fluid d-flex justify-content-center mt-4 p-3 " div id="about">
-                    <h2 class="text-center">
-                        <?php echo $translations->about;?>
-                    </h2>
-                </div>
-            <!-- About End -->
         </div>
     </div>
     

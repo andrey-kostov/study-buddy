@@ -38,6 +38,11 @@ $(document).ready(function(){
     
     $(document).on('click','#subject button',function(){
         var subject = $('#subject input').val();
+
+        if(subject.length < 1){
+            minimumChars();
+            return false;
+        }
         
         $.ajax({
             type: "POST",
@@ -63,7 +68,17 @@ $(document).ready(function(){
     $(document).on('click','#topic button',function(){
         var topic = $('#topic input').val();
         var subject = $('#subject-select option:selected').text();
+        var subjectValue = $('#subject-select option:selected');
 
+        if(topic.length < 1){
+            minimumChars();
+            return false;
+        }
+
+        if(subjectValue.val().length < 1){
+            pickSomething();
+        }
+        
         $.ajax({
             type: "POST",
             url: "ajax.php",
@@ -117,7 +132,18 @@ $(document).ready(function(){
         var correct_option = $('#question input[data-name=correct]').val();
         var question = $('#question input[data-name="question"]').val();
         var subject = $('#question-subject-select option:selected').text();
+        var subjectValue = $('#question-subject-select option:selected');
         var topic = $('#question-topic-select option:selected').text();
+        
+        if(subjectValue.val().length < 1 || topic.length < 1){
+            pickSomething();
+            return false;
+        }
+
+        if(option1.length < 1 || option2.length < 1 || option3.length < 1 || correct_option.length < 1){
+            minimumChars();
+            return false;
+        }
 
         $.ajax({
             type: "POST",
@@ -153,10 +179,16 @@ $(document).ready(function(){
         var topicsArray = [];
         $('#generate input:checked').each(function(){
             var thisTopic = $(this).siblings('label').text();
-            var thisSubject = $(this).parents('.form-check').siblings('h4').text();
+            var thisSubject = $(this).parents('.subject-wrapper').siblings('h4').text();
             var topicName = thisSubject+'/'+thisTopic;
             topicsArray.push(topicName);
         });
+
+        if(topicsArray.length < 1){
+            $('#generate-test-alert').css('display','block');
+            return false;
+        }
+
 
         if($(this).hasClass('generate-closed')){
             var type = 'closed';    
@@ -205,3 +237,31 @@ $(document).ready(function(){
     });
     
 }); 
+
+function minimumChars(){
+    $.ajax({
+        type: "POST",
+        url: "ajax.php",
+        dataType: "html",
+        data: {
+            action: "minimum_chars"
+        },
+        success: function(response) {
+            alert(response);
+        }
+    });
+}
+
+function pickSomething(){
+    $.ajax({
+        type: "POST",
+        url: "ajax.php",
+        dataType: "html",
+        data: {
+            action: "pick_something"
+        },
+        success: function(response) {
+            alert(response);
+        }
+    });
+}

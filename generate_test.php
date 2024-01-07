@@ -8,7 +8,7 @@
     $type = $_SESSION['type'];
 
     $questionsArray = [];
-
+    
     foreach ($topicsArray as $topic){
         $thisQuestions = json_decode(file_get_contents('questions/'.$topic));
         foreach ((array)$thisQuestions as $question){

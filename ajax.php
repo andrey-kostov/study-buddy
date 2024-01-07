@@ -81,5 +81,19 @@ switch($action){
         $_SESSION["topicsArray"] = $_POST['topicsArray'];
 
     break;  
+
+    case'minimum_chars':
+        $translationsJson = file_get_contents('includes/translations.json');
+        $translations = json_decode($translationsJson);
+        echo $translations->minimum_chars;
+
+    break; 
+    
+    case'pick_something':
+        $translationsJson = file_get_contents('includes/translations.json');
+        $translations = json_decode($translationsJson);
+        echo $translations->pick_something;
+
+    break; 
 }
 ?>

@@ -8,11 +8,15 @@
     "generate_closed":"Generate test with closed questions",
     "generate_open":"Generate test with open questions",
     
+    "minimum_chars":"3 characters minimum!",
+
     "need_to_pass":"Correct answers to pass - ",
     
     "option":"Answer",
     
     "pick_subjects":"Pick subjects",
+    "please_pick_topics":"Please, pick topics to continue!",
+    "pick_something":"You must pick topic and/or topic to continue!",
     
     "result":"Your result is: ",
     
