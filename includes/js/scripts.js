@@ -225,6 +225,8 @@ $(document).ready(function(){
         }else{
             $(this).removeClass('btn-outline-dark');
             $(this).addClass('btn-danger');
+            $(this).siblings('.correct').removeClass('btn-outline-dark');
+            $(this).siblings('.correct').addClass('btn-outline-success');
         }
         $(this).siblings('button').addClass('disabled');
         $(this).parents('.answers-wrapper').removeClass('not-answered');
